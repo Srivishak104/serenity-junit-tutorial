@@ -2,22 +2,15 @@ pipeline{
     agent any
 
     stages{
-        stage("clean up"){
-            steps{
-                deleteDir()
-            }
-        }
         stage("Build"){
             steps{
-                dir("serenity-junit-tutorial"){
-                    sh "mvn clean install"
+                 sh "mvn -B -DskipTests clean package"
                 }
             }
         }
         stage("Test"){
             steps{
-                dir("serenity-junit-tutorial"){
-                    sh "mvn test"
+                  sh "mvn test"
                 }
             }
         }
