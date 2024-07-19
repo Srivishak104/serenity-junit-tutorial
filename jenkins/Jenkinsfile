@@ -1,9 +1,6 @@
 pipeline{
     agent any
-     tools {
-            maven 'Maven 4.0.0'
-            jdk 'jdk22'
-        }
+
     stages{
         stage("clean up"){
             steps{
