@@ -7,14 +7,14 @@ pipeline{
         {
             steps
             {
-                 sh "mvn -B clean package"
+                 sh "mvn -B clean compile"
             }
         }
         stage("Test")
         {
             steps
             {
-                  sh "mvn serenity:aggregate"
+                  sh "mvn test"
             }        
         }
     }
